@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work With Me — Tushar Bhatia | Kinesis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#085041;--green-mid:#1D9E75;--green-light:#E1F5EE;--green-pale:#F4FBF8;
+  --purple:#7F77DD;--purple-light:#EEEDFE;
+  --amber:#EF9F27;--amber-light:#FAEEDA;
+  --text:#1a1a18;--mid:#4a4a45;--soft:#7a7a72;
+  --border:#e8e8e2;--bg:#FAFAF8;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.6}
+
+/* HERO */
+.hero{background:var(--green);padding:72px 24px 64px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;background:rgba(29,158,117,0.1);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-80px;left:-40px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,0.04);pointer-events:none}
+.hero-tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--green-mid);margin-bottom:14px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,54px);font-weight:500;color:#fff;line-height:1.15;margin-bottom:20px}
+.hero-note{font-family:'Inter',sans-serif;font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:480px;margin:0 auto 32px;line-height:1.8}
+.hero-author{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border-radius:40px;padding:8px 18px 8px 8px}
+.author-dot{width:36px;height:36px;border-radius:50%;background:var(--green-mid);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px;color:#fff;font-weight:600}
+.author-name{font-size:13px;font-weight:500;color:#fff;text-align:left}
+.author-sub{font-size:11px;color:rgba(255,255,255,.5);text-align:left}
+
+/* NAV */
+.sticky-nav{display:flex;justify-content:center;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;overflow-x:auto}
+.sticky-nav a{font-size:12px;font-weight:500;color:var(--soft);text-decoration:none;padding:14px 16px;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s}
+.sticky-nav a:hover{color:var(--green);border-color:var(--green-mid)}
+
+/* SECTIONS */
+.section{padding:64px 24px}
+.section-alt{background:#fff}
+.container{max-width:760px;margin:0 auto}
+.section-tag{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green-mid);margin-bottom:8px}
+.section-h{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,34px);font-weight:500;color:var(--text);line-height:1.2;margin-bottom:12px}
+.section-sub{font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:32px}
+.divider{height:1px;background:var(--border)}
+
+/* STEP FLOW */
+.step-flow{display:flex;gap:0;margin-bottom:48px;position:relative}
+.step-flow::before{content:'';position:absolute;top:20px;left:20px;right:20px;height:1px;background:var(--border);z-index:0}
+.step-item{flex:1;text-align:center;position:relative;z-index:1}
+.step-circle{width:40px;height:40px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.step-label{font-size:12px;font-weight:500;color:var(--text);margin-bottom:3px}
+.step-sub{font-size:11px;color:var(--soft)}
+
+/* OFFERING CARDS */
+.offerings{display:flex;flex-direction:column;gap:20px;margin-bottom:8px}
+.offer-card{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:#fff;cursor:pointer;transition:box-shadow .2s}
+.offer-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.offer-card.featured{border:2px solid var(--green)}
+.offer-head{display:flex;align-items:center;gap:16px;padding:24px 28px;transition:background .2s}
+.offer-head:hover{background:var(--bg)}
+.offer-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.icon-green{background:var(--green-light)}
+.icon-purple{background:var(--purple-light)}
+.icon-amber{background:var(--amber-light)}
+.icon-soft{background:#f3f3f1}
+.offer-head-text{flex:1}
+.offer-badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--green);color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:5px}
+.offer-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--text);line-height:1.1;margin-bottom:3px}
+.offer-price{font-size:16px;font-weight:600;color:var(--green)}
+.offer-price-note{font-size:11px;color:var(--soft);margin-top:1px}
+.offer-chevron{font-size:20px;color:var(--soft);transition:transform .3s;user-select:none;flex-shrink:0}
+.offer-chevron.open{transform:rotate(180deg)}
+.offer-body{display:none;padding:0 28px 28px;border-top:1px solid var(--border)}
+.offer-body.open{display:block}
+.offer-desc{font-size:14px;color:var(--mid);line-height:1.8;margin:20px 0 20px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.offer-includes{margin-bottom:20px}
+.includes-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:12px}
+.includes-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.inc-item{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--mid);line-height:1.5}
+.inc-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.dot-green{background:var(--green-mid)}
+.dot-purple{background:var(--purple)}
+.dot-amber{background:var(--amber)}
+.dot-soft{background:#bbb}
+.offer-cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;padding:11px 22px;background:var(--green);color:#fff;border-radius:8px;text-decoration:none;transition:opacity .2s}
+.btn-primary:hover{opacity:.88}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;padding:11px 22px;background:#25D366;color:#fff;border-radius:8px;text-decoration:none;transition:opacity .2s}
+.btn-wa:hover{opacity:.88}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;padding:11px 22px;border:1px solid var(--border);color:var(--mid);border-radius:8px;text-decoration:none;background:#fff;cursor:pointer;transition:background .2s}
+.btn-ghost:hover{background:var(--bg)}
+
+/* FORM SECTION */
+.form-wrap{background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.form-top{background:var(--green);padding:28px 32px}
+.form-top h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:#fff;margin-bottom:6px}
+.form-top p{font-size:13px;color:rgba(255,255,255,.65);line-height:1.6}
+.form-body{padding:28px 32px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:12px;font-weight:500;color:var(--mid);margin-bottom:6px;letter-spacing:.02em}
+.form-group input,.form-group select,.form-group textarea{width:100%;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);background:#fff;border:1px solid var(--border);border-radius:10px;padding:11px 14px;outline:none;transition:border-color .2s;-webkit-appearance:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green-mid)}
+.form-group textarea{resize:vertical;min-height:100px;line-height:1.6}
+.form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a7a72' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.form-submit{width:100%;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;padding:14px;background:var(--green);color:#fff;border:none;border-radius:10px;cursor:pointer;transition:opacity .2s;margin-top:4px}
+.form-submit:hover{opacity:.88}
+.form-note{font-size:12px;color:var(--soft);text-align:center;margin-top:12px;line-height:1.6}
+.or-divider{display:flex;align-items:center;gap:14px;margin:28px 0}
+.or-line{flex:1;height:1px;background:var(--border)}
+.or-text{font-size:12px;font-weight:500;color:var(--soft)}
+.wa-block{background:var(--green-pale);border:1px solid var(--green-light);border-radius:14px;padding:20px 24px;display:flex;align-items:center;gap:16px}
+.wa-icon{font-size:28px;flex-shrink:0}
+.wa-text{flex:1}
+.wa-title{font-size:14px;font-weight:500;color:var(--text);margin-bottom:3px}
+.wa-sub{font-size:13px;color:var(--mid)}
+.wa-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;padding:10px 20px;background:#25D366;color:#fff;border-radius:8px;text-decoration:none;flex-shrink:0;white-space:nowrap}
+
+/* SUCCESS */
+.form-success{display:none;text-align:center;padding:40px 24px}
+.success-icon{font-size:40px;margin-bottom:16px}
+.success-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--green);margin-bottom:8px}
+.success-body{font-size:14px;color:var(--mid);line-height:1.7}
+
+/* STRIP */
+.strip{background:var(--green-pale);border-radius:12px;padding:18px 22px;margin:24px 0;display:flex;gap:12px;align-items:flex-start}
+.strip-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.strip-text{font-size:14px;color:var(--mid);line-height:1.7}
+.strip-text strong{color:var(--text);font-weight:500}
+
+/* FOOTER */
+.footer{padding:28px 24px;text-align:center;border-top:1px solid var(--border)}
+.footer p{font-size:13px;color:var(--soft);margin-bottom:4px}
+.footer a{color:var(--green-mid);text-decoration:none}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .form-row{grid-template-columns:1fr}
+  .includes-grid{grid-template-columns:1fr}
+  .offer-head{padding:18px 20px}
+  .offer-body{padding:0 20px 20px}
+  .step-flow::before{display:none}
+  .step-flow{flex-direction:column;gap:16px}
+  .step-item{text-align:left;display:flex;gap:14px;align-items:flex-start}
+  .step-circle{flex-shrink:0;margin:0}
+  .form-top{padding:22px 22px}
+  .form-body{padding:22px 22px}
+  .wa-block{flex-direction:column;align-items:flex-start}
+  .hero{padding:56px 20px 48px}
+  .section{padding:48px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Kinesis by Tushar</div>
+  <h1>Work With Me</h1>
+  <p class="hero-note">I don't take on many people at once. Every person I work with gets my full attention — because that's the only way this works. If you feel a pull toward this, trust it.</p>
+  <div class="hero-author">
+    <div class="author-dot">T</div>
+    <div>
+      <div class="author-name">Tushar Bhatia</div>
+      <div class="author-sub">Somatic Strength Coach · Delhi NCR &amp; Online</div>
+    </div>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav class="sticky-nav">
+  <a href="#offerings">Offerings</a>
+  <a href="#restore">Restore Session</a>
+  <a href="#workshops">Workshops</a>
+  <a href="#begin">Begin</a>
+</nav>
+
+<!-- HOW IT WORKS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-tag">How it works</div>
+    <div class="section-h">Simple. No pressure.</div>
+    <div class="section-sub">Three steps from here to your first session.</div>
+
+    <div class="step-flow">
+      <div class="step-item">
+        <div class="step-circle">1</div>
+        <div class="step-label">You reach out</div>
+        <div class="step-sub">Form or WhatsApp</div>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">2</div>
+        <div class="step-label">Free 30-min call</div>
+        <div class="step-sub">We talk, I listen</div>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">3</div>
+        <div class="step-label">We begin</div>
+        <div class="step-sub">At your pace</div>
+      </div>
+    </div>
+
+    <div class="strip">
+      <div class="strip-icon">✦</div>
+      <div class="strip-text">The free call is not a sales call. It's a real conversation about what's going on in your body, what you've tried, and what's actually possible. By the end of it, you'll have clarity — whether we work together or not.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- OFFERINGS -->
+<section id="offerings" class="section">
+  <div class="container">
+    <div class="section-tag">Coaching offerings</div>
+    <div class="section-h">Choose your path.</div>
+    <div class="section-sub">Every offering is built around your whole system — body, mind, and life. The format changes. The depth doesn't.</div>
+
+    <div class="offerings">
+
+      <!-- ONLINE COACHING -->
+      <div class="offer-card">
+        <div class="offer-head" onclick="toggleOffer(this)">
+          <div class="offer-icon icon-green">🌐</div>
+          <div class="offer-head-text">
+            <div class="offer-name">Online Coaching</div>
+            <div class="offer-price">₹15,000 <span style="font-size:13px;font-weight:400;color:var(--soft)">/month</span></div>
+            <div class="offer-price-note">3-month minimum · fully remote · anywhere in the world</div>
+          </div>
+          <div class="offer-chevron">&#8964;</div>
+        </div>
+        <div class="offer-body">
+          <div class="offer-desc">
+            For people who are ready for real, structured coaching — wherever they are. Built entirely around your schedule, your body, and your life. Not a generic plan. A living, evolving programme that changes as you do.
+          </div>
+          <div class="offer-includes">
+            <div class="includes-label">What's included</div>
+            <div class="includes-grid">
+              <div class="inc-item"><div class="inc-dot dot-green"></div>2–4 coaching sessions per month — based on your needs and availability</div>
+              <div class="inc-item"><div class="inc-dot dot-green"></div>Custom programme redesigned every 4 weeks</div>
+              <div class="inc-item"><div class="inc-dot dot-green"></div>Video form review and movement feedback</div>
+              <div class="inc-item"><div class="inc-dot dot-green"></div>Breathwork and somatic practice guidance</div>
+              <div class="inc-item"><div class="inc-dot dot-green"></div>Nutrition and lifestyle support</div>
+              <div class="inc-item"><div class="inc-dot dot-green"></div>WhatsApp support between sessions</div>
+            </div>
+          </div>
+          <div class="offer-cta">
+            <a href="#begin" class="btn-primary">Apply for this →</a>
+            <a href="https://wa.me/919999978361?text=Hi%20Tushar%2C%20I'm%20interested%20in%20Online%20Coaching" class="btn-wa">💬 WhatsApp me</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- KINESIS METHOD FLAGSHIP -->
+      <div class="offer-card featured">
+        <div class="offer-head" onclick="toggleOffer(this)">
+          <div class="offer-icon icon-purple">⚡</div>
+          <div class="offer-head-text">
+            <div class="offer-badge">Flagship</div>
+            <div class="offer-name">Kinesis Method Coaching</div>
+            <div class="offer-price">₹27,000 <span style="font-size:13px;font-weight:400;color:var(--soft)">/month</span></div>
+            <div class="offer-price-note">3–6 month commitment · hybrid (in-person + virtual) · limited spots</div>
+          </div>
+          <div class="offer-chevron">&#8964;</div>
+        </div>
+        <div class="offer-body">
+          <div class="offer-desc">
+            The full experience. Online coaching integrated with in-person sessions — where the deeper work happens. Bodywork is at the heart of this programme: a hands-on therapeutic practice drawing from energy work, marma, Thai massage, and soft tissue release. It reaches what movement alone cannot. For people who are ready to go all the way in.
+          </div>
+          <div class="offer-includes">
+            <div class="includes-label">What's included</div>
+            <div class="includes-grid">
+              <div class="inc-item"><div class="inc-dot dot-purple"></div>Everything in Online Coaching</div>
+              <div class="inc-item"><div class="inc-dot dot-purple"></div>In-person and virtual sessions — frequency based on your goals</div>
+              <div class="inc-item"><div class="inc-dot dot-purple"></div>Bodywork — hands-on therapy using energy work, marma, touch, and soft tissue release</div>
+              <div class="inc-item"><div class="inc-dot dot-purple"></div>Somatic and emotional integration work</div>
+              <div class="inc-item"><div class="inc-dot dot-purple"></div>Nutrition and lifestyle guidance tailored to your life</div>
+              <div class="inc-item"><div class="inc-dot dot-purple"></div>WhatsApp support throughout</div>
+            </div>
+          </div>
+          <div class="strip" style="margin-bottom:20px">
+            <div class="strip-icon">🔒</div>
+            <div class="strip-text"><strong>Limited availability.</strong> I work with a small number of people at any time. If there are no spots, you'll be added to the waitlist and contacted when one opens.</div>
+          </div>
+          <div class="offer-cta">
+            <a href="#begin" class="btn-primary">Apply for this →</a>
+            <a href="https://wa.me/919999978361?text=Hi%20Tushar%2C%20I'm%20interested%20in%20the%20Kinesis%20Method%20Coaching" class="btn-wa">💬 WhatsApp me</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RESTORE SESSION -->
+<section id="restore" class="section section-alt">
+  <div class="container">
+    <div class="section-tag">Entry point</div>
+    <div class="section-h">Restore Session</div>
+    <div class="section-sub">Not sure where to start? This is where most people begin.</div>
+
+    <div class="offer-card" style="margin-bottom:0">
+      <div class="offer-head" onclick="toggleOffer(this)">
+        <div class="offer-icon icon-amber">🤲</div>
+        <div class="offer-head-text">
+          <div class="offer-name">Restore — Assessment + Bodywork</div>
+          <div class="offer-price">₹6,000</div>
+          <div class="offer-price-note">120 min · in-person · Delhi NCR · group bookings available</div>
+        </div>
+        <div class="offer-chevron">&#8964;</div>
+      </div>
+      <div class="offer-body">
+        <div class="offer-desc">
+          A full movement and postural assessment followed by a bodywork session — a hands-on therapeutic experience drawing from energy work, marma point therapy, Thai massage, yoga-based touch, and soft tissue release. You leave with a clear picture of what your body has been holding — and an honest conversation about what to do next.<br><br>
+          <strong style="color:var(--green)">For groups:</strong> if you have a team, a community, or a group of people who want to experience this together — I travel to your location. Reach out to discuss.
+        </div>
+        <div class="offer-includes">
+          <div class="includes-label">What's included</div>
+          <div class="includes-grid">
+            <div class="inc-item"><div class="inc-dot dot-amber"></div>Full movement and postural assessment</div>
+            <div class="inc-item"><div class="inc-dot dot-amber"></div>Bodywork — energy work, marma, Thai massage, touch healing, soft tissue release</div>
+            <div class="inc-item"><div class="inc-dot dot-amber"></div>Breathwork and nervous system observation</div>
+            <div class="inc-item"><div class="inc-dot dot-amber"></div>Personalised direction and next-step guidance</div>
+          </div>
+        </div>
+        <div class="offer-cta">
+          <a href="#begin" class="btn-primary">Book this session →</a>
+          <a href="https://wa.me/919999978361?text=Hi%20Tushar%2C%20I'd%20like%20to%20book%20a%20Restore%20Session" class="btn-wa">💬 WhatsApp me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WORKSHOPS -->
+<section id="workshops" class="section">
+  <div class="container">
+    <div class="section-tag">Groups · corporates · institutions</div>
+    <div class="section-h">Workshops &amp; Training</div>
+    <div class="section-sub">13+ years of working across movement, strength, bodywork, and somatic practice — including India's elite units NSG, ITBP, Para 17, and Haryana Police SWAT. Available now for groups, organisations, and tactical units.</div>
+
+    <div class="offer-card" style="margin-bottom:0">
+      <div class="offer-head" onclick="toggleOffer(this)">
+        <div class="offer-icon icon-soft">🎖️</div>
+        <div class="offer-head-text">
+          <div class="offer-name">Workshops &amp; Institutional Training</div>
+          <div class="offer-price" style="color:var(--mid);font-size:15px">Pricing on enquiry</div>
+          <div class="offer-price-note">Groups · corporates · tactical and paramilitary units</div>
+        </div>
+        <div class="offer-chevron">&#8964;</div>
+      </div>
+      <div class="offer-body">
+        <div class="offer-desc">
+          Whether it's a half-day wellness workshop for a corporate team, a multi-day movement and bodywork immersive, or a structured strength and conditioning programme for a tactical unit — each engagement is designed specifically for the group, their context, and what they actually need.
+        </div>
+        <div class="offer-includes">
+          <div class="includes-label">Available formats</div>
+          <div class="includes-grid">
+            <div class="inc-item"><div class="inc-dot dot-soft"></div>Half-day and full-day workshops — movement, bodywork, somatic practice</div>
+            <div class="inc-item"><div class="inc-dot dot-soft"></div>Strength and conditioning for tactical and paramilitary units</div>
+            <div class="inc-item"><div class="inc-dot dot-soft"></div>Corporate wellness programmes</div>
+            <div class="inc-item"><div class="inc-dot dot-soft"></div>1-on-1 coaching and mentorship for practitioners</div>
+          </div>
+        </div>
+        <div class="offer-cta">
+          <a href="#begin" class="btn-primary">Send an enquiry →</a>
+          <a href="https://wa.me/919999978361?text=Hi%20Tushar%2C%20I'd%20like%20to%20enquire%20about%20a%20workshop%20or%20institutional%20training" class="btn-wa">💬 WhatsApp me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BEGIN FORM -->
+<section id="begin" class="section section-alt">
+  <div class="container">
+    <div class="section-tag">Let's begin</div>
+    <div class="section-h">Tell me a little about yourself.</div>
+    <div class="section-sub">Fill in what feels relevant. I read every message personally and respond within 24 hours.</div>
+
+    <div class="form-wrap">
+      <div class="form-top">
+        <h3>Start the conversation</h3>
+        <p>This is not a sign-up form. It's just a way to introduce yourself so we can have a meaningful first call.</p>
+      </div>
+      <div class="form-body" id="form-container">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your name</label>
+            <input type="text" placeholder="Tushar Bhatia" id="f-name">
+          </div>
+          <div class="form-group">
+            <label>Your WhatsApp number</label>
+            <input type="tel" placeholder="+91 98765 43210" id="f-phone">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Your email</label>
+          <input type="email" placeholder="you@email.com" id="f-email">
+        </div>
+        <div class="form-group">
+          <label>Where are you based?</label>
+          <input type="text" placeholder="Delhi, Mumbai, online..." id="f-location">
+        </div>
+        <div class="form-group">
+          <label>Which offering are you interested in?</label>
+          <select id="f-offering">
+            <option value="">Select one</option>
+            <option>Online Coaching — ₹15,000/month</option>
+            <option>Kinesis Method Coaching — ₹27,000/month</option>
+            <option>Restore Session — ₹6,000</option>
+            <option>Workshop or Institutional Training</option>
+            <option>Not sure yet — just exploring</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>What's the main thing going on in your body or life right now?</label>
+          <textarea placeholder="Tell me what's been happening — pain, fatigue, disconnection, goals, anything. The more honest you are, the better I can help." id="f-message"></textarea>
+        </div>
+        <div class="form-group">
+          <label>How did you find me?</label>
+          <input type="text" placeholder="Instagram, a friend, Google..." id="f-source">
+        </div>
+        <button class="form-submit" onclick="submitForm()">Send my details →</button>
+        <p class="form-note">Your information stays between us. I'll be in touch within 24 hours.</p>
+      </div>
+      <div class="form-success" id="form-success">
+        <div class="success-icon">✦</div>
+        <div class="success-title">Your message is on its way.</div>
+        <div class="success-body">
+          Your details have opened in WhatsApp as a message to me — just press <strong>Send</strong> in WhatsApp to complete it.<br><br>
+          If WhatsApp didn't open, you can message me directly at the number below. I respond personally within 24 hours.
+        </div>
+        <div style="margin-top:20px">
+          <a href="https://wa.me/919999978361" class="btn-wa" style="justify-content:center;display:inline-flex">💬 Open WhatsApp directly</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="or-divider">
+      <div class="or-line"></div>
+      <div class="or-text">or reach out directly</div>
+      <div class="or-line"></div>
+    </div>
+
+    <div class="wa-block">
+      <div class="wa-icon">💬</div>
+      <div class="wa-text">
+        <div class="wa-title">Prefer to just message?</div>
+        <div class="wa-sub">WhatsApp is the fastest way to reach me. Say hello, ask a question, or tell me what's going on. I'll reply personally.</div>
+      </div>
+      <a href="https://wa.me/919999978361?text=Hi%20Tushar%2C%20I'd%20like%20to%20know%20more%20about%20working%20with%20you" class="wa-btn">Open WhatsApp →</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Tushar Bhatia &middot; Somatic Strength Coach</p>
+  <p>Kinesis by Tushar &middot; Fit by Tushar LLP</p>
+  <p><a href="https://kinesisbytushar.in">kinesisbytushar.in</a> &middot; <a href="https://instagram.com/kinesisbytushar101">@kinesisbytushar101</a></p>
+</footer>
+
+<script>
+function toggleOffer(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.offer-chevron');
+  const isOpen = body.classList.contains('open');
+
+  // Close all first
+  document.querySelectorAll('.offer-body').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.offer-chevron').forEach(c => c.classList.remove('open'));
+
+  // If it wasn't open, open it now
+  if (!isOpen) {
+    body.classList.add('open');
+    chevron.classList.add('open');
+  }
+}
+
+function submitForm() {
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const location = document.getElementById('f-location').value.trim();
+  const offering = document.getElementById('f-offering').value;
+  const message = document.getElementById('f-message').value.trim();
+  const source = document.getElementById('f-source').value.trim();
+
+  if (!name) { alert('Please enter your name.'); return; }
+  if (!phone) { alert('Please enter your WhatsApp number so I can reach you.'); return; }
+  if (!message) { alert('Please tell me a little about what\'s going on — even a line or two helps.'); return; }
+
+  // Build a clean WhatsApp message
+  const text =
+    `Hi Tushar, I filled in the form on your Work With Me page.\n\n` +
+    `*Name:* ${name}\n` +
+    `*WhatsApp:* ${phone}\n` +
+    (email ? `*Email:* ${email}\n` : '') +
+    (location ? `*Based in:* ${location}\n` : '') +
+    (offering ? `*Interested in:* ${offering}\n` : '') +
+    (source ? `*Found you via:* ${source}\n` : '') +
+    `\n*What's going on:*\n${message}`;
+
+  // Send via WhatsApp
+  const waURL = `https://wa.me/919999978361?text=${encodeURIComponent(text)}`;
+  window.open(waURL, '_blank');
+
+  // Show success message in page
+  document.getElementById('form-container').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+
+// Open the flagship card by default on load
+window.addEventListener('DOMContentLoaded', function() {
+  const flagship = document.querySelectorAll('.offer-head')[1];
+  if (flagship) {
+    const body = flagship.nextElementSibling;
+    const chevron = flagship.querySelector('.offer-chevron');
+    body.classList.add('open');
+    chevron.classList.add('open');
+  }
+});
+</script>
+
+</body>
+</html>
