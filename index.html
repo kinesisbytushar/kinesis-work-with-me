@@ -39,7 +39,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);-webk
 .section{padding:64px 24px}
 .section-alt{background:#fff}
 .container{max-width:760px;margin:0 auto}
-.section-tag{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green-mid);margin-bottom:8px}
+.section-tag{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--green-mid);margin-bottom:10px}
 .section-h{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,34px);font-weight:500;color:var(--text);line-height:1.2;margin-bottom:12px}
 .section-sub{font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:32px}
 .divider{height:1px;background:var(--border)}
@@ -170,8 +170,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);-webk
 
 <!-- NAV -->
 <nav class="sticky-nav">
-  <a href="#offerings">Offerings</a>
-  <a href="#restore">Restore Session</a>
+  <a href="#offerings">All Offerings</a>
   <a href="#workshops">Workshops</a>
   <a href="#begin">Begin</a>
 </nav>
@@ -213,11 +212,43 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);-webk
 <!-- OFFERINGS -->
 <section id="offerings" class="section">
   <div class="container">
-    <div class="section-tag">Coaching offerings</div>
+    <div class="section-tag">All offerings</div>
     <div class="section-h">Choose your path.</div>
     <div class="section-sub">Every offering is built around your whole system — body, mind, and life. The format changes. The depth doesn't.</div>
 
     <div class="offerings">
+
+      <!-- RESTORE SESSION -->
+      <div class="offer-card">
+        <div class="offer-head" onclick="toggleOffer(this)">
+          <div class="offer-icon icon-amber">🤲</div>
+          <div class="offer-head-text">
+            <div class="offer-name">Restore — Assessment + Bodywork</div>
+            <div class="offer-price">₹6,000</div>
+            <div class="offer-price-note">120 min · in-person · Delhi NCR · group bookings available — I travel to you</div>
+          </div>
+          <div class="offer-chevron">&#8964;</div>
+        </div>
+        <div class="offer-body">
+          <div class="offer-desc">
+            The starting point for most people. A full movement and postural assessment followed by a bodywork session — a hands-on therapeutic experience drawing from energy work, marma point therapy, Thai massage, yoga-based touch, and soft tissue release. You leave with a clear picture of what your body has been holding — and an honest conversation about what to do next.<br><br>
+            <strong style="color:var(--green)">For groups:</strong> if you have a team, a community, or a group of people who want to experience this together — I travel to your location. Reach out to discuss.
+          </div>
+          <div class="offer-includes">
+            <div class="includes-label">What's included</div>
+            <div class="includes-grid">
+              <div class="inc-item"><div class="inc-dot dot-amber"></div>Full movement and postural assessment</div>
+              <div class="inc-item"><div class="inc-dot dot-amber"></div>Bodywork — energy work, marma, Thai massage, touch healing, soft tissue release</div>
+              <div class="inc-item"><div class="inc-dot dot-amber"></div>Breathwork and nervous system observation</div>
+              <div class="inc-item"><div class="inc-dot dot-amber"></div>Personalised direction and next-step guidance</div>
+            </div>
+          </div>
+          <div class="offer-cta">
+            <a href="#begin" class="btn-primary">Book this session →</a>
+            <a href="https://wa.me/919999978361?text=Hi%20Tushar%2C%20I'd%20like%20to%20book%20a%20Restore%20Session" class="btn-wa">💬 WhatsApp me</a>
+          </div>
+        </div>
+      </div>
 
       <!-- ONLINE COACHING -->
       <div class="offer-card">
@@ -259,7 +290,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);-webk
           <div class="offer-head-text">
             <div class="offer-badge">Flagship</div>
             <div class="offer-name">Kinesis Method Coaching</div>
-            <div class="offer-price">₹27,000 <span style="font-size:13px;font-weight:400;color:var(--soft)">/month</span></div>
+            <div class="offer-price">₹29,000 <span style="font-size:13px;font-weight:400;color:var(--soft)">/month</span></div>
             <div class="offer-price-note">3–6 month commitment · hybrid (in-person + virtual) · limited spots</div>
           </div>
           <div class="offer-chevron">&#8964;</div>
@@ -272,8 +303,8 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);-webk
             <div class="includes-label">What's included</div>
             <div class="includes-grid">
               <div class="inc-item"><div class="inc-dot dot-purple"></div>Everything in Online Coaching</div>
-              <div class="inc-item"><div class="inc-dot dot-purple"></div>In-person and virtual sessions — frequency based on your goals</div>
-              <div class="inc-item"><div class="inc-dot dot-purple"></div>Bodywork — hands-on therapy using energy work, marma, touch, and soft tissue release</div>
+              <div class="inc-item"><div class="inc-dot dot-purple"></div>8 in-person and virtual sessions per month — structured around your goals</div>
+              <div class="inc-item"><div class="inc-dot dot-purple"></div>2 dedicated bodywork sessions per month — energy work, marma, Thai massage, soft tissue release</div>
               <div class="inc-item"><div class="inc-dot dot-purple"></div>Somatic and emotional integration work</div>
               <div class="inc-item"><div class="inc-dot dot-purple"></div>Nutrition and lifestyle guidance tailored to your life</div>
               <div class="inc-item"><div class="inc-dot dot-purple"></div>WhatsApp support throughout</div>
@@ -296,51 +327,8 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);-webk
 
 <div class="divider"></div>
 
-<!-- RESTORE SESSION -->
-<section id="restore" class="section section-alt">
-  <div class="container">
-    <div class="section-tag">Entry point</div>
-    <div class="section-h">Restore Session</div>
-    <div class="section-sub">Not sure where to start? This is where most people begin.</div>
-
-    <div class="offer-card" style="margin-bottom:0">
-      <div class="offer-head" onclick="toggleOffer(this)">
-        <div class="offer-icon icon-amber">🤲</div>
-        <div class="offer-head-text">
-          <div class="offer-name">Restore — Assessment + Bodywork</div>
-          <div class="offer-price">₹6,000</div>
-          <div class="offer-price-note">120 min · in-person · Delhi NCR · group bookings available</div>
-        </div>
-        <div class="offer-chevron">&#8964;</div>
-      </div>
-      <div class="offer-body">
-        <div class="offer-desc">
-          A full movement and postural assessment followed by a bodywork session — a hands-on therapeutic experience drawing from energy work, marma point therapy, Thai massage, yoga-based touch, and soft tissue release. You leave with a clear picture of what your body has been holding — and an honest conversation about what to do next.<br><br>
-          <strong style="color:var(--green)">For groups:</strong> if you have a team, a community, or a group of people who want to experience this together — I travel to your location. Reach out to discuss.
-        </div>
-        <div class="offer-includes">
-          <div class="includes-label">What's included</div>
-          <div class="includes-grid">
-            <div class="inc-item"><div class="inc-dot dot-amber"></div>Full movement and postural assessment</div>
-            <div class="inc-item"><div class="inc-dot dot-amber"></div>Bodywork — energy work, marma, Thai massage, touch healing, soft tissue release</div>
-            <div class="inc-item"><div class="inc-dot dot-amber"></div>Breathwork and nervous system observation</div>
-            <div class="inc-item"><div class="inc-dot dot-amber"></div>Personalised direction and next-step guidance</div>
-          </div>
-        </div>
-        <div class="offer-cta">
-          <a href="#begin" class="btn-primary">Book this session →</a>
-          <a href="https://wa.me/919999978361?text=Hi%20Tushar%2C%20I'd%20like%20to%20book%20a%20Restore%20Session" class="btn-wa">💬 WhatsApp me</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
 <!-- WORKSHOPS -->
-<section id="workshops" class="section">
-  <div class="container">
+<section id="workshops" class="section section-alt">
     <div class="section-tag">Groups · corporates · institutions</div>
     <div class="section-h">Workshops &amp; Training</div>
     <div class="section-sub">13+ years of working across movement, strength, bodywork, and somatic practice — including India's elite units NSG, ITBP, Para 17, and Haryana Police SWAT. Available now for groups, organisations, and tactical units.</div>
@@ -415,7 +403,7 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);-webk
           <select id="f-offering">
             <option value="">Select one</option>
             <option>Online Coaching — ₹15,000/month</option>
-            <option>Kinesis Method Coaching — ₹27,000/month</option>
+            <option>Kinesis Method Coaching — ₹29,000/month</option>
             <option>Restore Session — ₹6,000</option>
             <option>Workshop or Institutional Training</option>
             <option>Not sure yet — just exploring</option>
